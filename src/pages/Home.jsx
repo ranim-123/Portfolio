@@ -5,6 +5,7 @@ import HomeSection from "@/componant/HomeSection";
 import AboutSection from "../componant/AboutSection";
 import SkillsSection from "../componant/SkillsSection";
 import ProjectsSection from "../componant/projectsSection";
+import ContactSection from "../componant/ContactSection";
 function Home() {
   return (
     <>
@@ -25,6 +26,7 @@ function Home() {
           <AboutSection/>
           <SkillsSection/>
           <ProjectsSection/>
+          <ContactSection/>
         </main>
 
         {/*Footer*/}

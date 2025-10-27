@@ -79,13 +79,16 @@ function ProjectsSection() {
             </div>
           ))}
         </div>
-          <div className="text-center mt-15  ">
-          <a  className="cosmic-button w-fit flex items-center mx-auto gap-2"
-          href="
-          ">check My Github <ArrowRight size={16} />
-
+        <div className="text-center mt-15  ">
+          <a
+            className="cosmic-button w-fit flex items-center mx-auto gap-2"
+            href="https://github.com/ranim-123"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            check My Github <ArrowRight size={16} />
           </a>
-          </div>
+        </div>
       </div>
     </section>
   );
