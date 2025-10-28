@@ -10,22 +10,28 @@ import {
 } from "lucide-react";
 import toast from "react-hot-toast";
 import { cn } from "../lib/Utilites.js";
+import { useState } from "react";
 
 
 function ContactSection() {
+  const [isSubmitted, setIsSubmitted] = useState(true);
  
   function handleFormSubmit(e) {
     e.preventDefault();
     console.log("form submitted");
-    toast("fuck you amir", {
-      icon: "👏",
+    toast("thank you for your message", {
       style: {
-        background: "#333",
+        background: "#070a20ff",
         color: "#fff",
+        borderRadius: "20px",
       },
       duration: 3000,
       removeDelay: 0,
     });
+    setIsSubmitted(false); 
+    setTimeout(() => {
+      setIsSubmitted(true);
+    }, 3000);
   }
 
   return (
@@ -42,10 +48,10 @@ function ContactSection() {
           out. I'm always open to new opportunities
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3    gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2     gap-12">
         <div className="mt-6 space-y-8">
           <h3 className="text-2xl font-semibold mb-10">Contact Information</h3>
-          <div className="space-y-6 justify-center  lg:ml-10 p-5 lg:p-0 md: p-0 sm:p-0">
+          <div className="space-y-6 justify-center  lg:ml-40 p-5 lg:p-0 md: p-0 sm:p-0">
             <div className="flex items-start space-x-4 ">
               <div className="p-3 rounded-full bg-primary/20  ">
                 <Mail className="h-6 w-6 text-primary" />
@@ -158,13 +164,14 @@ function ContactSection() {
             </div>
             <div>
               <button
+                disabled={!isSubmitted}
                 onClick={handleFormSubmit}
                 type="submit "
                 className={cn(
                   "mx-auto cosmic-button w-full flex justify-center gap-2"
                 )}
               >
-                Send Messege
+                {isSubmitted ? "Send Messege" : "Sending..."}
                 <Send className="mt-1" size={16} />
               </button>
             </div>
