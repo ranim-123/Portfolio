@@ -8,6 +8,7 @@ import {
   Twitch,
   Twitter,
 } from "lucide-react";
+import toast from "react-hot-toast";
 import { cn } from "../lib/Utilites.js";
 
 
@@ -15,13 +16,16 @@ function ContactSection() {
  
   function handleFormSubmit(e) {
     e.preventDefault();
-    setTimeout(() => {
-      toast({
-        title: "Message sent",
-        description: "I'll get back to you as soon as possible.",
-        variant: "default",
-      });
-    }, 1500);
+    console.log("form submitted");
+    toast("fuck you amir", {
+      icon: "👏",
+      style: {
+        background: "#333",
+        color: "#fff",
+      },
+      duration: 3000,
+      removeDelay: 0,
+    });
   }
 
   return (
@@ -49,7 +53,8 @@ function ContactSection() {
               <div>
                 <h4 className="font-medium">Email</h4>
                 <a
-                  href="mailte:ranim.taieb@univ-constantine2.dz"
+                  href="mailto:ranim.taieb@univ-constantine2.dz"
+
                   className="text-muted-foreground hover:text-primary transation-color "
                 >
                   ranim.taieb@univ-constantine2.dz
@@ -153,7 +158,7 @@ function ContactSection() {
             </div>
             <div>
               <button
-                onClick={(e) => handleFormSubmit(e)}
+                onClick={handleFormSubmit}
                 type="submit "
                 className={cn(
                   "mx-auto cosmic-button w-full flex justify-center gap-2"
