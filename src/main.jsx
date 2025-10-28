@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import Home from "@/pages/home";
+import Home from './pages/Home.jsx';
 import NotFound from "@/pages/notFound";
 import { Toaster } from "react-hot-toast";
 
